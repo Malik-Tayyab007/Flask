@@ -1,0 +1,17 @@
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+data = {
+    "first_name": "Malik",
+    "last_name": "Tayyab",
+    "age": 23,
+    "city": "Sialkot"
+}
+
+@app.route('/', methods=['GET'])
+def get_updated_json():
+    return jsonify(data)
+
+if __name__ == '__main__':
+    app.run(debug=True)
